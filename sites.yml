@@ -1,0 +1,9 @@
+---
+
+- name: LEMP Stack installation
+  hosts: webservers
+  remote_user: ubuntu
+  become: yes
+
+  roles:
+    - nginx

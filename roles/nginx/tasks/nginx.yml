@@ -1,0 +1,13 @@
+---
+- name: Install nginx
+  apt: name=nginx state=latest
+
+- name: nginx configuration
+  template: src=nginx.conf.j2 dest=/etc/nginx/sites-available/nginx.conf
+  notify: restart nginx
+
+- name: nginx site symlink
+  file: src=/etc/nginx/sites-available/nginx.conf dest=/etc/nginx/sites-enabled/nginx.conf state=link force=true
+
+- name: nginx start
+  service: name=nginx state=started

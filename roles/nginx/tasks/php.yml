@@ -1,0 +1,9 @@
+---
+- name: install php-fpm
+  apt: name={{item}} state=latest
+  with_items:
+    - php-fpm
+    - php-mysql
+
+- name: copying php source code
+  copy: src=info.php dest=/var/www/html

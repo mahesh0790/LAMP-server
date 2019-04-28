@@ -1,0 +1,8 @@
+---
+
+- name: installing mysql
+  apt: name=mysql-server state=latest
+
+- name: installing pymysql for database management
+  apt: name=python-pymysql state=present
+

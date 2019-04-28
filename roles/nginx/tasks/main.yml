@@ -1,0 +1,5 @@
+---
+# tasks file for nginx
+- include: nginx.yml
+- include: php.yml
+- include: mysql.yml
